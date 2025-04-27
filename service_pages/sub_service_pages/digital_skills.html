@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Skills Training | Your Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/skills_main.css">
+
+    <style>
+        /* Digital Skills Specific Styles */
+.digital-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.flexibility-banner {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px 0;
+}
+
+.flex-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-content i {
+    font-size: 2.5rem;
+}
+
+.course-categories {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+    justify-content: center;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.tab-button:hover {
+    background: #f0f0f0;
+}
+
+.tab-button.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.course-details {
+    display: flex;
+    gap: 40px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.duration {
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+.learning-options {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.option-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-10px);
+}
+
+.option-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.testimonials {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    margin-top: 40px;
+}
+
+.testimonial {
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    scroll-snap-align: start;
+}
+
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-weight: 600;
+    margin-top: 15px;
+    color: var(--primary);
+}
+
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 40px auto 0;
+    gap: 40px;
+}
+
+.cta-bonus {
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+}
+
+.cta-bonus h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.cta-bonus i {
+    color: var(--secondary);
+    margin-right: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .course-details {
+        flex-direction: column;
+    }
+    .category-tabs {
+        flex-direction: column;
+    }
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    margin: 40px auto 0;
+    width: 100%;
+    justify-content: center; /* Add this line */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.testimonial {
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    scroll-snap-align: center; /* Changed from 'start' to 'center' */
+    flex: 0 0 auto; /* Prevents flexbox from resizing testimonials */
+    margin: 0 15px; /* Adds horizontal spacing */
+}
+.back-home a::before {
+    content: "\f060"; /* Home icon from Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="back-home">
+        <a href="../skilling.html">Back</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero digital-hero">
+        <div class="container">
+            <h1 style="color: #fff;"><i class="fas fa-laptop-code" style="color: lightgreen;"></i> Digital Skills Training</h1>
+            <p>Master in-demand tech skills on <strong>your schedule</strong> - online or in-person!</p>
+            <a href="#contact" class="cta-button"><i class="fas fa-user-plus"></i> Start Learning Today</a>
+        </div>
+    </section>
+
+    <!-- Flexibility Banner -->
+    <section class="flexibility-banner">
+        <div class="container">
+            <div class="flex-content">
+                <i class="fas fa-calendar-alt"></i>
+                <div>
+                    <h3>Learn When It Works For You</h3>
+                    <p>We adapt to <strong>your</strong> schedule with morning, evening, and weekend classes available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="course-categories">
+        <div class="container">
+            <h2><i class="fas fa-graduation-cap"></i> Our Digital Programs</h2>
+            <div class="category-tabs">
+                <button class="tab-button active" data-tab="computer-literacy">Computer Literacy</button>
+                <button class="tab-button" data-tab="office">MS Office</button>
+                <button class="tab-button" data-tab="graphics">Graphics Design</button>
+                <button class="tab-button" data-tab="programming">Programming</button>
+            </div>
+            
+            <div class="tab-content active" id="computer-literacy-tab">
+                <div class="course-details">
+                    <div class="course-info">
+                        <h3><i class="fas fa-laptop"></i> Computer Fundamentals</h3>
+                        <p>Perfect for absolute beginners to build confidence with technology.</p>
+                        <ul>
+                            <li>Understanding computer hardware/software</li>
+                            <li>File management and organization</li>
+                            <li>Internet basics and online safety</li>
+                            <li>Email and communication tools</li>
+                            <li>Troubleshooting common issues</li>
+                        </ul>
+                        <div class="duration">
+                            <i class="fas fa-clock"></i> Duration: 2-4 weeks
+                        </div>
+                    </div>
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Computer literacy class">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="office-tab">
+                <div class="course-details">
+                    <div class="course-info">
+                        <h3><i class="fas fa-file-excel"></i> Microsoft Office Mastery</h3>
+                        <p>Boost your productivity with essential office software skills.</p>
+                        <ul>
+                            <li>Word: Professional document creation</li>
+                            <li>Excel: Formulas, charts, data analysis</li>
+                            <li>PowerPoint: Effective presentations</li>
+                            <li>Outlook: Email and calendar management</li>
+                            <li>OneDrive/SharePoint: Cloud collaboration</li>
+                        </ul>
+                        <div class="duration">
+                            <i class="fas fa-clock"></i> Duration: 4-6 weeks
+                        </div>
+                    </div>
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Microsoft Office training">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="graphics-tab">
+                <div class="course-details">
+                    <div class="course-info">
+                        <h3><i class="fas fa-paint-brush"></i> Professional Graphics Design</h3>
+                        <p>Master industry-standard Adobe Creative Suite applications.</p>
+                        <ul>
+                            <li>Photoshop: Photo editing & manipulation</li>
+                            <li>Illustrator: Vector graphics & logos</li>
+                            <li>InDesign: Layouts & publishing</li>
+                            <li>Color theory & typography</li>
+                            <li>Portfolio development</li>
+                        </ul>
+                        <div class="duration">
+                            <i class="fas fa-clock"></i> Duration: 8-12 weeks
+                        </div>
+                    </div>
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Graphics design work">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="programming-tab">
+                <div class="course-details">
+                    <div class="course-info">
+                        <h3><i class="fas fa-code"></i> Introduction to Programming</h3>
+                        <p>Begin your journey into the world of coding.</p>
+                        <ul>
+                            <li>Programming fundamentals & logic</li>
+                            <li>HTML/CSS: Web page structure</li>
+                            <li>JavaScript: Interactive websites</li>
+                            <li>Python: Versatile programming</li>
+                            <li>Git basics for version control</li>
+                        </ul>
+                        <div class="duration">
+                            <i class="fas fa-clock"></i> Duration: 10-16 weeks
+                        </div>
+                    </div>
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Programming on laptop">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Options -->
+    <section class="learning-options">
+        <div class="container">
+            <h2><i class="fas fa-chalkboard-teacher"></i> Flexible Learning Options</h2>
+            <div class="options-grid">
+                <div class="option-card">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Self-Paced Online</h3>
+                    <p>Access course materials 24/7 with instructor support via email.</p>
+                </div>
+                <div class="option-card">
+                    <i class="fas fa-video"></i>
+                    <h3>Live Virtual Classes</h3>
+                    <p>Interactive sessions with instructors in real-time.</p>
+                </div>
+                <div class="option-card">
+                    <i class="fas fa-building"></i>
+                    <h3>In-Person Training</h3>
+                    <p>Hands-on instruction at our training center.</p>
+                </div>
+                <div class="option-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Corporate Training</h3>
+                    <p>Custom programs for employee upskilling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2><i class="fas fa-quote-left"></i> Success Stories</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student">
+                    <p>"The flexible schedule allowed me to learn graphic design while working full-time. I've since started freelancing!"</p>
+                    <div class="name">- Aisha M., Graphics Design Graduate</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Student">
+                    <p>"After the programming course, I landed an internship at a local tech company. Life-changing!"</p>
+                    <div class="name">- David K., Programming Student</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2><i class="fas fa-rocket"></i> Ready to Boost Your Digital Skills?</h2>
+            <p>Next sessions starting monthly - enroll today!</p>
+            <div class="cta-flex">
+                <div class="cta-bonus">
+                    <h3><i class="fas fa-gift"></i> Enroll Now & Get:</h3>
+                    <ul>
+                        <li>Free software installation support</li>
+                        <li>Access to recorded lessons</li>
+                        <li>Certificate upon completion</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="cta-button"><i class="fas fa-edit"></i> Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <!-- Copy contact section from previous pages -->
+    </section>
+
+    <footer>
+        <!-- Copy footer from previous pages -->
+    </footer>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            const tabId = this.getAttribute('data-tab') + '-tab';
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // Testimonial slider
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const testimonialCount = testimonials.length;
+    
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.display = i === index ? 'block' : 'none';
+        });
+    }
+    
+    function rotateTestimonials() {
+        currentTestimonial = (currentTestimonial + 1) % testimonialCount;
+        showTestimonial(currentTestimonial);
+    }
+    
+    // Initialize
+    showTestimonial(0);
+    setInterval(rotateTestimonials, 5000);
+});
+
+    </script>
+</body>
+</html>

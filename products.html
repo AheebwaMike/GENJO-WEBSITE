@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Your Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/skills_main.css">
+
+    <style>
+        /* Products Page - Mobile First Approach */
+.products-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+/* Desktop Category Filter */
+.desktop-categories {
+    display: block;
+    background: white;
+    padding: 15px 0;
+}
+
+.desktop-categories .category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile Filter Button */
+.mobile-filter-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-filter-btn i {
+    font-size: 1.2rem;
+}
+
+/* Mobile Category Filter */
+.mobile-categories {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 99;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 15px 0;
+}
+
+.mobile-categories.active {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+.mobile-categories .category-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 15px;
+}
+
+.mobile-categories .cat-btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Category Button Styles */
+.cat-btn {
+    padding: 10px 15px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cat-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .desktop-categories {
+        display: none;
+    }
+    
+    .mobile-filter-btn {
+        display: flex;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-categories {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Product Image Container Fixes */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    /* Fixed aspect ratio container */
+    aspect-ratio: 3/4; /* Adjust this ratio as needed */
+}
+
+.product-img-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+}
+
+.product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill container without distortion */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 15px;
+    background: white;
+}
+
+/* Alternative fixed height approach */
+/* .product-img-container {
+    height: 250px; /* Fixed height 
+    overflow: hidden;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Product Card Structure */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures consistent height */
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Image Container */
+.product-img-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+    overflow: hidden;
+}
+
+.product-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Product Info Section - Now Always Visible */
+.product-info {
+    padding: 15px;
+    flex-grow: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.product-info p {
+    margin: 0 0 12px 0;
+    color: #555;
+    flex-grow: 1; /* Pushes meta to bottom */
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    </style>
+
+</head>
+<body>
+    <div class="back-home">
+        <a href="index.html">Back Home</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero products-hero">
+        <div class="container">
+            <h1 style="color: #fff;"><i class="fas fa-box-open" style="color: lightgreen;"></i> Products From Our Training</h1>
+            <p>Handcrafted excellence by our talented students and graduates</p>
+        </div>
+    </section>
+
+    <!-- Desktop Category Filter -->
+    <section class="product-categories desktop-categories">
+        <div class="container">
+            <h2><i class="fas fa-tags"></i> Explore By Category</h2>
+            <div class="category-tabs">
+                <button class="cat-btn active" data-category="all">All Products</button>
+                <button class="cat-btn" data-category="textiles">Textiles</button>
+                <button class="cat-btn" data-category="crafts">Crafts</button>
+                <button class="cat-btn" data-category="food">Food Products</button>
+                <button class="cat-btn" data-category="digital">Digital Creations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-showcase">
+        <div class="container">
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Floating Filter Button -->
+    <button id="mobile-filter-btn" class="mobile-filter-btn">
+        <i class="fas fa-filter"></i>
+        <span>Filter</span>
+    </button>
+
+    <!-- Mobile Category Filter (Hidden by default) -->
+    <section id="mobile-categories" class="product-categories mobile-categories">
+        <div class="container">
+            <h2>Filter Products</h2>
+            <div class="category-tabs">
+                <button class="cat-btn active" data-category="all">All Products</button>
+                <button class="cat-btn" data-category="textiles">Textiles</button>
+                <button class="cat-btn" data-category="crafts">Crafts</button>
+                <button class="cat-btn" data-category="food">Food Products</button>
+                <button class="cat-btn" data-category="digital">Digital Creations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials and CTA sections... -->
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <h2><i class="fas fa-lightbulb"></i> Inspired By Our Products?</h2>
+                <p>Join our programs and create your own success story</p>
+                <a href="../training.html" class="cta-button"><i class="fas fa-user-plus"></i> Enroll Now</a>
+            </div>
+        </section>
+
+<script>
+    // Product Data
+// Product Data - Easy to Update!
+const products = [
+    {
+        id: 1,
+        name: "Handwoven Basket Set",
+        category: "crafts",
+        description: "Made from natural fibers by vocational students",
+        price: "UGX 45,000",
+        image: "assets/images/products/handwoven_basket.jpg"
+    },
+    {
+        id: 2,
+        name: "Organic Beeswax Candles",
+        category: "crafts",
+        description: "Eco-friendly candles from beekeeping program",
+        price: "UGX 15,000",
+        image: "assets/images/products/candles.jpg"
+    },
+    {
+        id: 3,
+        name: "Custom Logo T-Shirt",
+        category: "textiles",
+        description: "Screen-printed in our tailoring workshop",
+        price: "UGX 25,000",
+        image: "assets/images/products/shirt.jpg"
+    },
+    {
+        id: 4,
+        name: "Artisanal Banana Bread",
+        category: "food",
+        description: "Baked by culinary program graduates",
+        price: "UGX 8,000",
+        image: "assets/images/products/banana_bread.jpg"
+    },
+    {
+        id: 5,
+        name: "Mobile App UI Kit",
+        category: "digital",
+        description: "Designed by digital skills students",
+        price: "UGX 50,000",
+        image: "images/products/mobile_kit.jpg"
+    },
+    {
+        id: 6,
+        name: "Embroidered Table Runner",
+        category: "textiles",
+        description: "Hand-stitched by tailoring class",
+        price: "UGX 35,000",
+        image: "assets/images/products/table_runner.jpg"
+    }
+];
+
+// DOM Elements
+const productsGrid = document.getElementById('products-grid');
+const categoryBtns = document.querySelectorAll('.cat-btn');
+const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+const mobileCategories = document.getElementById('mobile-categories');
+let currentCategory = 'all';
+
+// Render Products
+function renderProducts(category = 'all') {
+    currentCategory = category;
+    productsGrid.innerHTML = '';
+    
+    const filteredProducts = category === 'all' 
+        ? products 
+        : products.filter(product => product.category === category);
+    
+    filteredProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-img">
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <div class="product-meta">
+                    <span class="price">${product.price}</span>
+                    <span class="category-label">${product.category}</span>
+                </div>
+            </div>
+        `;
+        productsGrid.appendChild(productCard);
+    });
+    
+    // Update mobile button text
+    if (window.innerWidth <= 768) {
+        const mobileBtnText = category === 'all' ? 'Filter' : 
+            category.charAt(0).toUpperCase() + category.slice(1);
+        mobileFilterBtn.querySelector('span').textContent = mobileBtnText;
+    }
+}
+
+// Filter Products
+function filterProducts(category) {
+    // Update active state
+    categoryBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === category);
+    });
+    
+    // Render products
+    renderProducts(category);
+    
+    // Close mobile filter if open
+    if (window.innerWidth <= 768) {
+        mobileCategories.classList.remove('active');
+    }
+}
+
+// Event Listeners
+categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterProducts(btn.dataset.category);
+    });
+});
+
+// Mobile Filter Toggle
+mobileFilterBtn.addEventListener('click', () => {
+    mobileCategories.classList.toggle('active');
+});
+
+// Close mobile filter when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileCategories.contains(e.target) && e.target !== mobileFilterBtn) {
+        mobileCategories.classList.remove('active');
+    }
+});
+
+// Initialize
+window.addEventListener('load', () => {
+    renderProducts();
+    
+    // Adjust for screen size changes
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            mobileCategories.classList.remove('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

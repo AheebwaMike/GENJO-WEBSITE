@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing & Business Services | Your Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/skills_main.css">
+
+    <style>
+        /* Printing Services Specific Styles */
+.printing-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.services-overview {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card ul li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-card ul li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+}
+
+/* Pricing Table */
+.pricing-samples {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+.pricing-table {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+tr:hover {
+    background: #f5f5f5;
+}
+
+.disclaimer {
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+/* Process Flow */
+.process-flow {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+.step:not(:last-child):after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: -50px;
+    width: 100px;
+    height: 2px;
+    background: var(--primary);
+    z-index: 1;
+}
+
+.step span {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .step:after {
+        display: none;
+    }
+    .step {
+        margin-bottom: 40px;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <div class="back-home">
+        <a href="../index.html">Back Home</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero printing-hero">
+        <div class="container">
+            <h1 style="color: #fff;"><i class="fas fa-print" style="color: lightgreen;"></i> Printing, Branding & Business Services</h1>
+            <p>Professional solutions for all your documentation and business registration needs</p>
+            <a href="#contact" class="cta-button"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2><i class="fas fa-cogs"></i> Our Comprehensive Services</h2>
+            <p class="section-description">One-stop solutions for businesses, students, and professionals</p>
+            
+            <div class="services-grid">
+                <!-- Printing Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Printing Services</h3>
+                    <ul>
+                        <li>Color/B&W printing</li>
+                        <li>Large format printing</li>
+                        <li>Thesis binding</li>
+                        <li>Business cards</li>
+                    </ul>
+                </div>
+                
+                <!-- Branding -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Branding Solutions</h3>
+                    <ul>
+                        <li>Logo design</li>
+                        <li>Business stationery</li>
+                        <li>Branded merchandise</li>
+                        <li>Signage & banners</li>
+                    </ul>
+                </div>
+                
+                <!-- Document Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <h3>Document Services</h3>
+                    <ul>
+                        <li>Photocopying</li>
+                        <li>Scanning</li>
+                        <li>Document editing</li>
+                        <li>Formatting</li>
+                    </ul>
+                </div>
+                
+                <!-- Business Registration -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>Business Registration</h3>
+                    <ul>
+                        <li>URA registration</li>
+                        <li>URSB company registration</li>
+                        <li>Tax identification</li>
+                        <li>Business licensing</li>
+                    </ul>
+                </div>
+                
+                <!-- Online Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Online Services</h3>
+                    <ul>
+                        <li>NSSF registration</li>
+                        <li>KCCA permits</li>
+                        <li>URA e-filing</li>
+                        <li>URSB e-services</li>
+                    </ul>
+                </div>
+                
+                <!-- Editing & Formatting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Professional Editing</h3>
+                    <ul>
+                        <li>Thesis formatting</li>
+                        <li>CV/resume polishing</li>
+                        <li>Business proposals</li>
+                        <li>Academic papers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2><i class="fas fa-check-circle"></i> Why Clients Trust Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Fast Turnaround</h3>
+                    <p>Urgent jobs completed within hours</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Confidentiality</h3>
+                    <p>Secure handling of sensitive documents</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-crown"></i>
+                    <h3>Expert Guidance</h3>
+                    <p>Step-by-step assistance with registrations</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Competitive Pricing</h3>
+                    <p>Affordable rates for all services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Samples -->
+    <section class="pricing-samples">
+        <div class="container">
+            <h2><i class="fas fa-tags"></i> Sample Pricing</h2>
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Color Printing</td>
+                            <td>A4 single side</td>
+                            <td>UGX 500-1,500/page</td>
+                        </tr>
+                        <tr>
+                            <td>Business Registration</td>
+                            <td>Sole proprietorship</td>
+                            <td>UGX 150,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Thesis Binding</td>
+                            <td>Hardcover</td>
+                            <td>UGX 30,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Document Editing</td>
+                            <td>Formatting & proofreading</td>
+                            <td>UGX 1,000+/page</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="disclaimer">*Prices vary based on quantity and urgency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Flow -->
+    <section class="process-flow">
+        <div class="container">
+            <h2><i class="fas fa-project-diagram"></i> How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <span>1</span>
+                    <h3>Submit Request</h3>
+                    <p>Bring files or email documents</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <h3>Review & Confirm</h3>
+                    <p>We verify requirements</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <h3>Processing</h3>
+                    <p>Printing/registration underway</p>
+                </div>
+                <div class="step">
+                    <span>4</span>
+                    <h3>Delivery</h3>
+                    <p>Collect or we deliver</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2><i class="fas fa-headset"></i> Need Urgent Assistance?</h2>
+            <p>Walk-ins welcome or book an appointment for priority service</p>
+            <div class="cta-buttons">
+                <a href="tel:+256745401097" class="cta-button"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="#contact" class="secondary-button"><i class="fas fa-envelope"></i> Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <!-- Copy from previous pages -->
+    </section>
+
+    <footer>
+        <!-- Copy from previous pages -->
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

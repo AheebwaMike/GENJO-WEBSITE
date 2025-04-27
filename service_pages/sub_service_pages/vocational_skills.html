@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocational Training | Your Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/skills_main.css">
+
+    <style>
+        /* Vocational-Specific Styles */
+.vocational-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.programs {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.program-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.program-card h3 {
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.program-card ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.program-card ul li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.program-card ul li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+}
+
+.success-stories {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.story-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.enrollment-cta {
+    background: var(--primary);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-text {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.cta-text i {
+    margin-right: 10px;
+    color: var(--secondary);
+}
+.back-home a::before {
+    content: "\f060"; /* Home icon from Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 16px;
+}
+    </style>
+
+</head>
+<body>
+    <div class="back-home">
+        <a href="../skilling.html">Back</a>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero vocational-hero">
+        <div class="container">
+            <h1 style="color: #fff;"><i class="fas fa-hands-helping" style="color: lightgreen;"></i> Vocational Hands-On Skills Training</h1>
+            <p>Master practical skills for entrepreneurship and self-sufficiency!</p>
+            <a href="#contact" class="cta-button"><i class="fas fa-user-plus"></i> Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- Why Our Vocational Training? -->
+    <section class="benefits">
+        <div class="container">
+            <h2><i class="fas fa-lightbulb"></i> Why Choose Our Vocational Training?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with years of experience.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Income Potential</h3>
+                    <p>Skills that can generate immediate income opportunities.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Practical Focus</h3>
+                    <p>80% hands-on training with real-world applications.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification</h3>
+                    <p>Receive recognized certification upon completion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vocational Programs -->
+    <section class="programs">
+        <div class="container">
+            <h2><i class="fas fa-graduation-cap"></i> Our Skills Programs</h2>
+            <div class="programs-grid">
+                <!-- Tailoring -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Tailoring & Fashion Design</h3>
+                    <ul>
+                        <li>Basic to advanced sewing techniques</li>
+                        <li>Pattern making and alterations</li>
+                        <li>Fabric selection and care</li>
+                        <li>Business setup guidance</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Crafts -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Arts & Crafts</h3>
+                    <ul>
+                        <li>Beadwork and jewelry making</li>
+                        <li>Basket weaving</li>
+                        <li>Decorative item creation</li>
+                        <li>Product marketing</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Bakery -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3>Bakery & Confectionery</h3>
+                    <ul>
+                        <li>Bread and pastry making</li>
+                        <li>Cake decoration</li>
+                        <li>Food safety practices</li>
+                        <li>Small bakery management</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Cottage Industry -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Cottage Industry Training</h3>
+                    <ul>
+                        <li>Small-scale production techniques</li>
+                        <li>Product development</li>
+                        <li>Quality control</li>
+                        <li>Local market strategies</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Soap Making -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <h3>Liquid Soap Making</h3>
+                    <ul>
+                        <li>Chemical safety and handling</li>
+                        <li>Various soap formulations</li>
+                        <li>Packaging and branding</li>
+                        <li>Wholesale strategies</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Briquette Making -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <h3>Briquette Making</h3>
+                    <ul>
+                        <li>Material selection</li>
+                        <li>Production techniques</li>
+                        <li>Equipment use</li>
+                        <li>Eco-friendly business models</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+                
+                <!-- Candle Making -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-candle-holder"></i>
+                    </div>
+                    <h3>Candle Making</h3>
+                    <ul>
+                        <li>Different wax types</li>
+                        <li>Scent and color blending</li>
+                        <li>Mold creation</li>
+                        <li>Creative designs</li>
+                    </ul>
+                    <button class="course-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <img src="https://via.placeholder.com/150" alt="Graduate photo">
+                    <h3>Sarah's Tailoring Business</h3>
+                    <p>"After completing the tailoring program, I started my own shop and now employ 3 others!"</p>
+                </div>
+                <div class="story-card">
+                    <img src="https://via.placeholder.com/150" alt="Graduate photo">
+                    <h3>James' Soap Enterprise</h3>
+                    <p>"The soap making training helped me launch a product line now sold in 10 local stores."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment CTA -->
+    <section class="enrollment-cta">
+        <div class="container">
+            <h2><i class="fas fa-hands-helping"></i> Ready to Transform Your Future?</h2>
+            <p>Join our next intake and gain skills that can change your life!</p>
+            <div class="cta-content">
+                <div class="cta-text">
+                    <p><i class="fas fa-check-circle"></i> <strong>Next session starts:</strong> June 15, 2023</p>
+                    <p><i class="fas fa-check-circle"></i> <strong>Duration:</strong> 4-12 weeks (varies by program)</p>
+                    <p><i class="fas fa-check-circle"></i> <strong>Class size:</strong> Limited to 15 students per program</p>
+                </div>
+                <a href="#contact" class="cta-button"><i class="fas fa-edit"></i> Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Same as language page) -->
+    <section id="contact" class="contact">
+        <!-- Copy contact section from language.html -->
+    </section>
+
+    <footer>
+        <!-- Copy footer from language.html -->
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

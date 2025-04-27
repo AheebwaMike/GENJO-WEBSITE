@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Your Company</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/skills_main.css">
+    <style>
+        :root {
+            --primary: #2a5bd7;
+            --secondary: #ff6b35;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .products-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .product-img-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            overflow: hidden;
+        }
+        
+        .product-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .product-info p {
+            margin-bottom: 12px;
+            color: #555;
+            flex-grow: 1;
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        /* Filter Buttons */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .cat-btn {
+            padding: 8px 16px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .cat-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Mobile Filter Button */
+        .mobile-filter-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-categories {
+                display: none;
+            }
+            
+            .mobile-filter-btn {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero products-hero">
+        <div class="container">
+            <h1><i class="fas fa-box-open"></i> Products From Our Training</h1>
+            <p>Handcrafted excellence by our talented students and graduates</p>
+        </div>
+    </section>
+
+    <!-- Desktop Category Filter -->
+    <section class="desktop-categories">
+        <div class="container">
+            <h2><i class="fas fa-tags"></i> Explore By Category</h2>
+            <div class="category-tabs">
+                <button class="cat-btn active" data-category="all">All Products</button>
+                <button class="cat-btn" data-category="textiles">Textiles</button>
+                <button class="cat-btn" data-category="crafts">Crafts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-showcase">
+        <div class="container">
+            <div id="products-grid" class="products-grid">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Filter Button -->
+    <button id="mobile-filter-btn" class="mobile-filter-btn">
+        <i class="fas fa-filter"></i>
+        <span>Filter</span>
+    </button>
+
+    <script>
+        // Product Data with Correct Image Paths
+        const products = [
+            {
+                id: 1,
+                name: "Handwoven Basket",
+                category: "crafts",
+                description: "Made from natural fibers",
+                price: "UGX 45,000",
+                image: "https://images.unsplash.com/photo-1604176354204-92660ced9873?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 2,
+                name: "Organic Candles",
+                category: "crafts",
+                description: "Eco-friendly beeswax candles",
+                price: "UGX 15,000",
+                image: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+            },
+            {
+                id: 3,
+                name: "Custom T-Shirt",
+                category: "textiles",
+                description: "Screen-printed design",
+                price: "UGX 25,000",
+                image: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+            }
+        ];
+
+        // Initialize Gallery
+        function renderProducts(category = 'all') {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            
+            const filtered = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-meta">
+                            <span class="price">${product.price}</span>
+                            <span class="category-label">${product.category}</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            
+            // Filter buttons
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderProducts(btn.dataset.category);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

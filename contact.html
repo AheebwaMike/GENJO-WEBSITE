@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/extras.css">
+	<link rel="stylesheet" href="css/animated_underline.css">    
+    <style>
+        :root {
+            --primary1: #039dd4;
+            --secondary1: #ef3c23;
+            --dark: #2d3748;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary1), var(--secondary1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .contact-methods {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary1);
+        }
+        
+        .contact-card.whatsapp .contact-icon {
+            color: #25D366;
+        }
+        
+        .contact-card.email .contact-icon {
+            color: var(--secondary);
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+        
+        .contact-label {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .form-divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            width: 100%;
+        }
+        
+        .form-divider::before,
+        .form-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .form-divider span {
+            padding: 0 1rem;
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        .form-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        iframe {
+            border: none;
+            width: 100%;
+            min-height: 1300px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-header p {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header-section -->
+<!-- Header section -->
+<header>
+	<div class="container-menu-desktop">
+		<div class="topbar bg-dark">
+			<div class="content-topbar container h-100">
+				<div class="left-topbar">
+					<span class="left-topbar-item">
+						Thursday, Jan 09, 2024
+					</span>
+  
+					<a href="about.html" class="left-topbar-item">
+					  About <i>GENJO IVESTMENT (U) LIMITED</i>
+					</a>
+  
+					<a href="contact.html" class="left-topbar-item">
+					  Contact Us
+					</a>
+  
+					<a href="#" class="left-topbar-item">
+					  Subscribe to our Newsletter
+					</a>
+  
+					<a href="#map" class="left-topbar-item">
+					  View Location
+					</a>
+				</div>
+  
+				<div class="right-topbar">
+				  <a href="#">
+					  <span class="fab fa-facebook-f"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-x-twitter"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-tiktok"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-youtube"></span>
+				  </a>
+  
+				  <a href="#">
+					<span class="fab fa-whatsapp"></span>
+				</a>
+				</div>
+			</div>
+		</div>
+  
+		<div class="wrap-header-mobile">
+			<div class="logo-mobile">
+				<a href="index.html"><img src="assets/images/genjo-logo.png" alt="IMG-LOGO" style="
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: scale(2) translate(-50%, 0);
+				"></a>
+			</div>
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+  
+		<div class="menu-mobile" style="display: none;">
+			<ul class="topbar-mobile">
+				<li class="left-topbar">
+					<span class="left-topbar-item flex-wr-s-c">
+						Thursday, Jan 09, 2024
+					</span>
+				</li>
+  
+				<li class="left-topbar">
+					<a href="about.html" class="left-topbar-item">
+						About Us
+					</a>
+  
+					<a href="contact.html" class="left-topbar-item">
+						Contact
+					</a>
+  
+					<a href="#" class="left-topbar-item">
+						News Letter
+					</a>
+  
+					<a href="#map" class="left-topbar-item">
+						Location
+					</a>
+					<a href="#" class="left-topbar-item">
+						Brochure
+				</li>
+  
+				<li class="right-topbar">
+				  <a href="#">
+					  <span class="fab fa-facebook-f"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-x-twitter"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-tiktok"></span>
+				  </a>
+  
+				  <a href="#">
+					  <span class="fab fa-youtube"></span>
+				  </a>
+  
+				  <a href="#">
+					<span class="fab fa-whatsapp"></span>
+				</a>
+			</ul>
+  
+			<ul class="main-menu-m">
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+  
+				<li>
+					<a href="#">Our Services</a>
+					<ul class="sub-menu-m">
+					  <li><a href="service_pages/skilling.html">Skilling and Training</a></li>
+					  <li><a href="service_pages/consultancy.html">Consultancy Services</a></li>
+					  <li><a href="service_pages/printing_and_branding.html">Printing and Branding</a></li>
+					  <li><a href="service_pages/photography.html">Filming & Videography</a></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+  
+				<li>
+					<a href="products.html">Our Products</a>
+				</li>
+  
+				
+				<li>
+				  <a href="contact.html">Contact Us</a>
+			  </li>
+  
+			  
+			  <li>
+				  <a href="gallery.html">Gallery</a>
+			  </li>
+  
+			  
+			  <li>
+				  <a href="about.html">About Us</a>
+			  </li>
+  
+			</ul>
+		</div>
+  
+		<div class="wrap-main-nav">
+		  <div class="download-brochure">
+			  <a href="#">Brochure</a>
+		  </div>
+			<div class="main-nav">
+				<a class="logo-stick" href="index.html">
+					<img width="90" src="assets/images/genjo-logo.png" alt="LOGO">
+				</a>
+				<nav class="menu-desktop">
+
+  
+					<ul class="main-menu justify-content-center">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+  
+						
+						<li>
+							<a class="dropdown" href="#">Our Services</a>
+							<ul class="sub-menu">
+							  <li><a href="service_pages/skilling.html">Skilling and Training</a></li>
+							  <li><a href="service_pages/consultancy.html">Consultancy Services</a></li>
+							  <li><a href="service_pages/printing_and_branding.html">Printing and Branding</a></li>
+							  <li><a href="service_pages/photography.html">Filming & Videography</a></li>
+							</ul>
+						</li>
+  
+						<li>
+						  <a href="products.html">Our Products</a>
+					  </li>
+  
+						<li class="main-menu-active">
+							<a href="contact.html">Contact Us</a>
+						</li>
+  
+						<li>
+						  <a href="gallery.html">Gallery</a>
+					  </li>
+  
+					  <li>
+						  <a href="about.html">About Us</a>
+					  </li>
+  
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+  </header>
+
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>We would love to hear from you! Reach out through any of these channels or send us a message directly.</p>
+        </div>
+        
+        <div class="contact-methods">
+            <div class="contact-card whatsapp">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <div class="contact-info">+256 700 000 000</div>
+                <p class="contact-label">Fastest response time</p>
+                <a href="https://wa.me/256700000000" class="contact-button">Message Us</a>
+            </div>
+            
+            <div class="contact-card email">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <div class="contact-info">hafisakabaganja256@gmail.com</div>
+                <p class="contact-label">Typically replies within 24 hours</p>
+                <a href="mailto:hafisakabaganja256@gmail.com" class="contact-button">Send Email</a>
+            </div>
+        </div>
+        
+        <div class="form-divider">
+            <span>OR</span>
+        </div>
+        
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd98DwIc_5bPcKbQiRUKDxAYys6CzTLe9b2qM9xCe_c5byFTg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts/mobile_menu_toggle.js"></script>
+    <script src="scripts/main_script.js"></script>
+    <script src="scripts/gallery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // Add hover effects to contact cards
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.12)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>

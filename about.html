@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Company Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #039dd4;
+            --secondary: #ef3c23;
+            --dark: #1a1f2d;
+            --light: #f8fafc;
+            --accent: #20c997;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(3,157,212,0.1) 0%, rgba(239,60,35,0.05) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-bg-text {
+            position: absolute;
+            font-size: 20vw;
+            font-weight: 800;
+            color: rgba(3, 157, 212, 0.03);
+            z-index: 1;
+            user-select: none;
+            white-space: nowrap;
+            animation: floatText 40s linear infinite;
+        }
+        
+        @keyframes floatText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+        
+        /* About Sections */
+        .about-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Story Section */
+        .story-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 100px;
+        }
+        
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            left: -90px;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--primary);
+        }
+        
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Mission/Vision Cards */
+        .mv-cards {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .mv-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mv-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .mv-card.vision .mv-icon {
+            color: var(--secondary);
+        }
+        
+        .mv-card.values .mv-icon {
+            color: var(--accent);
+        }
+        
+        .mv-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--light);
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(3, 157, 212, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(3, 157, 212, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .story-timeline {
+                padding-left: 70px;
+            }
+            
+            .timeline-year {
+                left: -60px;
+                width: 50px;
+                height: 50px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-bg-text {
+                font-size: 25vw;
+            }
+            
+            .mv-cards {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+
+        /** Back Home Button */
+        /* Back Home Button - Fixed Position */
+.back-home {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.back-home a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    background-color: var(--primary); /* Your yellow color */
+    color: var(--dark); /* Dark text for contrast */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+    text-decoration: none !important;
+}
+
+.back-home a:hover {
+    background-color: transparent;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+}
+
+.back-home a::before {
+    content: "\f015"; /* Home icon from Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Pulse animation (same as download button) */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+}
+
+.back-home a:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .back-home {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .back-home a {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="back-home">
+        <a href="index.html">Back Home</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-bg-text">OUR STORY</div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">We're changing the game</h1>
+            <p class="hero-subtitle fade-in delay-1">From humble beginnings to industry leaders, our journey has been fueled by innovation, passion, and a commitment to excellence.</p>
+        </div>
+        <canvas id="particles-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; opacity:0.15;"></canvas>
+    </section>
+    
+    <!-- Our Story -->
+    <section class="about-section">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Our Story</h2>
+            <p class="section-subtitle">Every great company has an origin story worth telling. Here's ours.</p>
+        </div>
+        
+        <div class="story-timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-year">2015</div>
+                <h3 class="timeline-title">The Beginning</h3>
+                <p>Founded in a small office with just three team members and a big vision to revolutionize the industry.</p>
+            </div>
+            
+            <div class="timeline-item fade-in delay-1">
+                <div class="timeline-year">2017</div>
+                <h3 class="timeline-title">First Breakthrough</h3>
+                <p>Launched our flagship product that changed how people interact with technology in their daily lives.</p>
+            </div>
+            
+            <div class="timeline-item fade-in delay-2">
+                <div class="timeline-year">2020</div>
+                <h3 class="timeline-title">Global Expansion</h3>
+                <p>Opened offices in three new countries and grew our team to over 50 talented professionals.</p>
+            </div>
+            
+            <div class="timeline-item fade-in delay-3">
+                <div class="timeline-year">2023</div>
+                <h3 class="timeline-title">Today & Beyond</h3>
+                <p>Serving clients worldwide with cutting-edge solutions and preparing for the next phase of growth.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission/Vision/Values -->
+    <section class="about-section" style="background: rgba(3,157,212,0.03);">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Our Core</h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+        </div>
+        
+        <div class="mv-cards">
+            <div class="mv-card fade-in">
+                <div class="mv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="mv-title">Mission</h3>
+                <p>To empower businesses and individuals through innovative solutions that simplify complexity and drive meaningful progress.</p>
+            </div>
+            
+            <div class="mv-card vision fade-in delay-1">
+                <div class="mv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="mv-title">Vision</h3>
+                <p>A world where technology seamlessly enhances human potential, creating opportunities for all.</p>
+            </div>
+            
+            <div class="mv-card values fade-in delay-2">
+                <div class="mv-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="mv-title">Values</h3>
+                <p>Innovation, Integrity, Collaboration, Excellence, and Customer Obsession are at the heart of our culture.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="about-section">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Meet The Team</h2>
+            <p class="section-subtitle">The brilliant minds behind our success</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-card fade-in">
+                <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80');"></div>
+                <div class="team-info">
+                    <h3 class="team-name">Alex Johnson</h3>
+                    <p class="team-role">CEO & Founder</p>
+                    <p>Visionary leader with 15+ years in the industry.</p>
+                </div>
+            </div>
+            
+            <div class="team-card fade-in delay-1">
+                <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80');"></div>
+                <div class="team-info">
+                    <h3 class="team-name">Sarah Williams</h3>
+                    <p class="team-role">CTO</p>
+                    <p>Tech innovator and product architect.</p>
+                </div>
+            </div>
+            
+            <div class="team-card fade-in delay-2">
+                <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80');"></div>
+                <div class="team-info">
+                    <h3 class="team-name">Michael Chen</h3>
+                    <p class="team-role">Head of Design</p>
+                    <p>Crafting beautiful, intuitive experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title" style="color: white;">By The Numbers</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Our impact in measurable terms</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Clients Served</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Countries</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section fade-in delay-1">
+        <h2 class="cta-title">Ready to be part of our story?</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #4a5568;">We're always looking for talented individuals and great partners to collaborate with.</p>
+        <a href="#" class="cta-button">Get in Touch</a>
+    </section>
+    
+    <script>
+        // Simple intersection observer for animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+// Add after main script
+const canvas = document.getElementById('particles-bg');
+const ctx = canvas.getContext('2d');
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+const particles = [];
+for (let i = 0; i < 60; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    size: Math.random() * 3 + 1,
+    speed: Math.random() * 0.5 + 0.2,
+    color: `rgba(3, 157, 212, ${Math.random() * 0.3 + 0.1})`
+  });
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.y -= p.speed;
+    if (p.y < 0) p.y = canvas.height;
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+</script>
+
+</body>
+</html>
